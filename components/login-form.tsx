@@ -27,9 +27,39 @@ export function LoginForm({
   } = useForm<SignInFormData>({
     resolver: zodResolver(signInSchema),
   });
+  // const searchParams = useSearchParams();
+  // const callbackUrl = searchParams.get("callbackUrl");
+  // const router = useRouter();
 
   const onSubmit = async (data: SignInFormData) => {
     console.log(data);
+
+    // const signInPromise = new Promise((resolve, reject) => {
+    //   signIn("credentials", {
+    //     email: data.email,
+    //     password: data.password,
+    //     callbackUrl: callbackUrl ?? FrontendRoutes.ORDERS,
+    //     redirect: false,
+    //   })
+    //     .then((result) => {
+    //       resolve(result);
+    //       console.log(result);
+
+    //     })
+    //     .catch((error) => reject(error));
+    // });
+
+    // toast.promise(signInPromise, {
+    //   loading: "Logging in...",
+    //   success: () => {
+    //     router.push(FrontendRoutes.ORDERS);
+    //     return  "Logged in successfully!";
+    //   },
+    //   error: (error) => {
+    //     console.error(error);
+    //     return "Invalid email or password";
+    //   },
+    // });
     // Call your login logic here
   };
 
